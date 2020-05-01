@@ -1,5 +1,5 @@
-defmodule RsvpWebWeb.ErrorView do
-  use RsvpWebWeb, :view
+defmodule RsvpWeb.ErrorView do
+  use RsvpWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

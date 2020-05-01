@@ -1,4 +1,4 @@
-defmodule RsvpWebWeb.ErrorHelpers do
+defmodule RsvpWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -39,9 +39,9 @@ defmodule RsvpWebWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(RsvpWebWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(RsvpWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(RsvpWebWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(RsvpWeb.Gettext, "errors", msg, opts)
     end
   end
 end

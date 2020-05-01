@@ -16,11 +16,6 @@ defmodule RsvpUmbrella.MixProject do
   #
   # Run "mix help deps" for examples and options.
   defp deps do
-    [
-      {:phoenix, "~> 1.5.0-rc.0", override: true},
-      {:phoenix_ecto, "~> 4.1"},
-      {:ecto_sql, "~> 3.4"},
-      {:postgrex, ">= 0.0.0"}
-    ]
+    []
   end
 end

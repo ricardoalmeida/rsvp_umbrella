@@ -9,6 +9,17 @@
 # move said applications out of the umbrella.
 import Config
 
+config :rsvp_web,
+  generators: [context_app: false]
+
+# Configures the endpoint
+config :rsvp_web, RsvpWeb.Endpoint,
+  url: [host: "localhost"],
+  secret_key_base: "IDhs1cV46LWiLqOW9RDpCprWjb1JaQB/FrwHrsRWZISu1E5Hc9HmoK/gVCrkfshY",
+  render_errors: [view: RsvpWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: RsvpWeb.PubSub,
+  live_view: [signing_salt: "Xhi+nsT+"]
+
 config :rsvp, Rsvp.Repo,
   username: "postgres",
   password: "",
@@ -20,12 +31,15 @@ config :rsvp, Rsvp.Repo,
 config :rsvp,
   ecto_repos: [Rsvp.Repo]
 
-# Sample configuration:
-#
-#     config :logger, :console,
-#       level: :info,
-#       format: "$date $time [$level] $metadata$message\n",
-#       metadata: [:user_id]
-#
-
 config :phoenix, :json_library, Jason
+# Configures Elixir's Logger
+config :logger, :console,
+  format: "$time $metadata[$level] $message\n",
+  metadata: [:request_id]
+
+# Use Jason for JSON parsing in Phoenix
+config :phoenix, :json_library, Jason
+
+# Import environment specific config. This must remain at the bottom
+# of this file so it overrides the configuration defined above.
+import_config "#{Mix.env()}.exs"

@@ -1,5 +1,5 @@
-defmodule RsvpWebWeb.PageControllerTest do
-  use RsvpWebWeb.ConnCase
+defmodule RsvpWeb.PageControllerTest do
+  use RsvpWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

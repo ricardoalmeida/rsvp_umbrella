@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :rsvp_web, RsvpWebWeb.Endpoint,
+config :rsvp_web, RsvpWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -17,7 +17,7 @@ config :rsvp_web, RsvpWebWeb.Endpoint,
       "--mode",
       "development",
       "--watch-stdin",
-      cd: Path.expand("../assets", __DIR__)
+      cd: Path.expand("../apps/rsvp_web/assets", __DIR__)
     ]
   ]
 
@@ -46,22 +46,12 @@ config :rsvp_web, RsvpWebWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :rsvp_web, RsvpWebWeb.Endpoint,
+config :rsvp_web, RsvpWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/rsvp_web_web/(live|views)/.*(ex)$",
-      ~r"lib/rsvp_web_web/templates/.*(eex)$"
+      ~r"lib/rsvp_web/(live|views)/.*(ex)$",
+      ~r"lib/rsvp_web/templates/.*(eex)$"
     ]
   ]
-
-# Do not include metadata nor timestamps in development logs
-config :logger, :console, format: "[$level] $message\n"
-
-# Set a higher stacktrace during development. Avoid configuring such
-# in production as building large stacktraces may be expensive.
-config :phoenix, :stacktrace_depth, 20
-
-# Initialize plugs at runtime for faster development compilation
-config :phoenix, :plug_init_mode, :runtime

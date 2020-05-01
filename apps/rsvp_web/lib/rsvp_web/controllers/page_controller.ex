@@ -1,5 +1,5 @@
-defmodule RsvpWebWeb.PageController do
-  use RsvpWebWeb, :controller
+defmodule RsvpWeb.PageController do
+  use RsvpWeb, :controller
 
   def index(conn, _params) do
     render(conn, "index.html")

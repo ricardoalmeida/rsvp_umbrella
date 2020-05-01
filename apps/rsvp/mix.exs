@@ -26,10 +26,10 @@ defmodule Rsvp.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:phoenix, "~> 1.5.0-rc.0", override: true},
+      {:phoenix, "~> 1.5"},
       {:phoenix_ecto, "~> 4.1"},
       {:ecto_sql, "~> 3.4"},
-      {:postgrex, ">= 0.0.0"}
+      {:postgrex, "~> 0.15.3"}
     ]
   end
 end

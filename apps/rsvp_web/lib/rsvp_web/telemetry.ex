@@ -1,4 +1,4 @@
-defmodule RsvpWebWeb.Telemetry do
+defmodule RsvpWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -40,7 +40,7 @@ defmodule RsvpWebWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {RsvpWebWeb, :count_users, []}
+      # {RsvpWeb, :count_users, []}
     ]
   end
 end

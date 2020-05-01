@@ -1,5 +1,5 @@
-defmodule RsvpWebWeb.LayoutViewTest do
-  use RsvpWebWeb.ConnCase, async: true
+defmodule RsvpWeb.LayoutViewTest do
+  use RsvpWeb.ConnCase, async: true
 
   # When testing helpers, you may want to import Phoenix.HTML and
   # use functions such as safe_to_string() to convert the helper

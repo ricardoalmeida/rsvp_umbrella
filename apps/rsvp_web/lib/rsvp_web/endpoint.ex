@@ -1,4 +1,4 @@
-defmodule RsvpWebWeb.Endpoint do
+defmodule RsvpWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :rsvp_web
 
   # The session will be stored in the cookie and signed,
@@ -7,10 +7,10 @@ defmodule RsvpWebWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_rsvp_web_key",
-    signing_salt: "iXuSPP/s"
+    signing_salt: "L9EUI59v"
   ]
 
-  socket "/socket", RsvpWebWeb.UserSocket,
+  socket "/socket", RsvpWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -49,5 +49,5 @@ defmodule RsvpWebWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug RsvpWebWeb.Router
+  plug RsvpWeb.Router
 end

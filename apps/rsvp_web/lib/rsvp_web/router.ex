@@ -1,5 +1,5 @@
-defmodule RsvpWebWeb.Router do
-  use RsvpWebWeb, :router
+defmodule RsvpWeb.Router do
+  use RsvpWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule RsvpWebWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", RsvpWebWeb do
+  scope "/", RsvpWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", RsvpWebWeb do
+  # scope "/api", RsvpWeb do
   #   pipe_through :api
   # end
 
@@ -36,7 +36,7 @@ defmodule RsvpWebWeb.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: RsvpWebWeb.Telemetry
+      live_dashboard "/dashboard", metrics: RsvpWeb.Telemetry
     end
   end
 end
