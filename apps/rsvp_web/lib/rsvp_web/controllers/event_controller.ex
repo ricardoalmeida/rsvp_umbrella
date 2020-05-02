@@ -1,6 +1,8 @@
 defmodule RsvpWeb.EventController do
   use RsvpWeb, :controller
 
+  plug RsvpWeb.AuthorizedPlug, "create" when action in [:create]
+
   def show(conn, %{"id" => id}) do
     event =
       Rsvp.EventQueries.get_by_id(id)
